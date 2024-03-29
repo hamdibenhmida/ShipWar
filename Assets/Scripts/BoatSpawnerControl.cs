@@ -11,40 +11,18 @@ public class BoatSpawnerControl : MonoBehaviour
     int randomSpawnPoint, randomBoat;
     Vector2 spawnPosition;
     public GameObject[] boats;
-    public  List<GameObject> boatsToSpawn = new List<GameObject>();
-    public int numberOfReplicas = 10;
     public GameObject civilianBoat;
     float nextCivilianBoat;
-    public float civilianBoatSpawnWait = 5f; // Interval to spawn civilian boat
+    public float civilianBoatSpawnWait = 5f; // timer to spawn civilian boat per seconds
 
     // Start is called before the first frame update
     void Start()
     {
         spawnPosition = new Vector2(-12f, 0.25f);
         nextCivilianBoat = Time.time;
-        foreach (GameObject boat in boats)
-        {
-            for (int i = 0;i < numberOfReplicas; i++)
-            {
-                boatsToSpawn.Add(boat);
-            }
-        }
-        Shuffle(boatsToSpawn);
+        
 
         InvokeRepeating("SpawnBoat", 0f, 2f);
-    }
-
-    private void Shuffle(List<GameObject> list)
-    {
-        int n = list.Count;
-        while (n > 1)
-        {
-            n--;
-            int k = Random.Range(0, n + 1);
-            GameObject value = list[k];
-            list[k] = list[n];
-            list[n] = value;
-        }
     }
 
     void SpawnBoat()
@@ -52,7 +30,7 @@ public class BoatSpawnerControl : MonoBehaviour
         if (!HitsCounterControl.gameOver)
         {
             randomSpawnPoint = Random.Range(0, 7);
-            randomBoat = Random.Range(0, boatsToSpawn.Count);
+            randomBoat = Random.Range(0, boats.Length);
 
 
             switch (randomSpawnPoint)
@@ -90,7 +68,7 @@ public class BoatSpawnerControl : MonoBehaviour
                     
                     break;
             }
-            Instantiate(boatsToSpawn[randomBoat], spawnPosition, quaternion.identity);
+            Instantiate(boats[randomBoat], spawnPosition, quaternion.identity);
              
 
             

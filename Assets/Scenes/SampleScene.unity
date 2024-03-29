@@ -338,10 +338,8 @@ MonoBehaviour:
   - {fileID: 5505647921120741348, guid: 3d62ce7ccda4d2343bdd6035b36e180b, type: 3}
   - {fileID: 3971772476334168651, guid: e982385a9639b4b468f3629a2afe80c4, type: 3}
   - {fileID: 5811728512393703468, guid: 73d5a87f732d32c4abf24147369c1785, type: 3}
-  boatsToSpawn: []
-  numberOfReplicas: 1
   civilianBoat: {fileID: 3240812018690708034, guid: e1cdb0bb18d65d745a97df90e7d52535, type: 3}
-  civilianBoatSpawnWait: 10000
+  civilianBoatSpawnWait: 2
 --- !u!1 &449280101
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,13 +651,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2128322680}
+  - {fileID: 1784697838}
   m_Father: {fileID: 1983173065}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 11.6, y: 410.48}
-  m_SizeDelta: {x: 237, y: 124}
+  m_SizeDelta: {x: 287.884, y: 150.6228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &872678722
 MonoBehaviour:
@@ -1741,7 +1740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 7799139832346094066, guid: 1f96f1ccd57e92846bca0211e05564c6, type: 3}
   moveSpeed: 5
-  fireRate: 0
+  fireRate: 2
 --- !u!50 &1703239256
 Rigidbody2D:
   serializedVersion: 4
@@ -2060,6 +2059,86 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1784697837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784697838}
+  - component: {fileID: 1784697840}
+  - component: {fileID: 1784697839}
+  m_Layer: 5
+  m_Name: timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1784697838
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784697837}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 872678721}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -16.6, y: -20.8}
+  m_SizeDelta: {x: 163.1633, y: 45.3332}
+  m_Pivot: {x: 0.50000006, y: 0.5000003}
+--- !u!114 &1784697839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784697837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3803922, g: 0.69411767, b: 0.34509805, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 35
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 92
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0s
+--- !u!222 &1784697840
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784697837}
+  m_CullTransparentMesh: 1
 --- !u!1 &1803733239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,7 +2751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.6569, y: 5.5412}
+  m_AnchoredPosition: {x: -16.599976, y: 22.90005}
   m_SizeDelta: {x: 351.9048, y: 80}
   m_Pivot: {x: 0.50000006, y: 0.5000003}
 --- !u!114 &2128322681
@@ -2687,7 +2766,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e896c4de3015d4cab77bbbd623872a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHits: 5
+  timerText: {fileID: 1784697839}
+  maxHits: 40
+  targetTime: 30
   win: {fileID: 2008853313}
   lose: {fileID: 1295998510}
 --- !u!114 &2128322682

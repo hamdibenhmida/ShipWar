@@ -100,11 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9656b266e998164092ec9581e95d445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoveSpeed: 2
-  maxMoveSpeed: 5
+  minMoveSpeed: 3
+  maxMoveSpeed: 10
   explosion: {fileID: 260648563494378152, guid: d78c89024255f0944b1940d020543107, type: 3}
-  prefab: {fileID: 5811728512393703468}
-  boatSpawnerControl: {fileID: 0}
 --- !u!95 &1722828629551570732
 Animator:
   serializedVersion: 5

@@ -8,8 +8,11 @@ using UnityEngine.UI;
 public class HitsCounterControl : MonoBehaviour
 {
     Text hitCounterText;
+    public Text timerText;
+
     public static int hitsCounter = 0;
     public int maxHits = 40;
+    public float targetTime = 10.0f;
     public static bool gameOver = false;
     public GameObject win;
     public GameObject lose;
@@ -27,8 +30,13 @@ public class HitsCounterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetTime -= Time.deltaTime;
+
         hitCounterText.text = hitsCounter.ToString() ;
-        if ( hitsCounter >= maxHits  )
+        timerText.text = targetTime.ToString("0") + "s";
+        
+
+        if ( hitsCounter >= maxHits || targetTime <= 0.0f)
         {
             gameOver = true ;
         }

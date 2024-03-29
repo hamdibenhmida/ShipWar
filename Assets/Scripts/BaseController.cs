@@ -27,14 +27,10 @@ public class BaseController : MonoBehaviour
 
         if (!HitsCounterControl.gameOver)
         {
-            
-
             if (Input.GetButtonDown("Fire1"))
             {
                 LaunchRocket();
             }
-
-            
 
         }
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -9, 9), transform.position.y);// this line force the base to stay inside the scene (y=-9 is the edge on the left and y=9 is the edge on the right)
